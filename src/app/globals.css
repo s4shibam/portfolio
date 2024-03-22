@@ -1,0 +1,44 @@
+@import url('https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .animate-pause {
+    animation-play-state: paused;
+  }
+}
+
+*,
+::before,
+::after {
+  @apply border-bg-dark dark:border-bg-light;
+}
+
+html {
+  @apply overflow-x-hidden scroll-smooth selection:bg-primary/50;
+}
+
+body {
+  @apply hide-scroll min-h-screen w-screen bg-bg-light px-4 text-base text-text-black dark:bg-bg-darker dark:text-text-white md:text-lg;
+}
+
+/* Hide Scroll bar for components having "hide-scroll" class in their class name */
+.hide-scroll::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+@-moz-document url-prefix() {
+  .hide-scroll {
+    overflow: auto;
+    -ms-overflow-style: none;
+    scrollbar-color: transparent transparent;
+  }
+}
+
+/* Additional CSS */
+.input-box {
+  @apply w-full rounded-2xl border-2 border-gray-400 bg-bg-light bg-opacity-50 p-2 font-medium tracking-wide caret-primary outline-none dark:border-gray-600 dark:bg-bg-dark dark:caret-secondary md:p-3 lg:text-xl;
+}
