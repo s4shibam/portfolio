@@ -1,0 +1,57 @@
+{
+  "plugins": ["@typescript-eslint", "tailwindcss"],
+  "extends": [
+    "next",
+    "next/core-web-vitals",
+    "eslint:recommended",
+    "plugin:import/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:tailwindcss/recommended",
+    "prettier"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "rules": {
+    "@typescript-eslint/no-explicit-any": 0,
+    "import/order": [
+      "error",
+      {
+        "alphabetize": { "order": "asc", "caseInsensitive": true },
+        "newlines-between": "always",
+        "groups": [
+          "builtin",
+          "external",
+          "index",
+          "parent",
+          "internal",
+          "sibling"
+        ]
+      }
+    ],
+    "react/function-component-definition": [
+      "warn",
+      {
+        "namedComponents": "arrow-function"
+      }
+    ],
+    "react/jsx-sort-props": [
+      "error",
+      {
+        "ignoreCase": true,
+        "reservedFirst": true,
+        "callbacksLast": true,
+        "shorthandFirst": true
+      }
+    ],
+    "tailwindcss/no-custom-classname": [
+      "warn",
+      { "whitelist": ["bx", "bx.*"] }
+    ],
+    "react-hooks/exhaustive-deps": "warn"
+  },
+  "overrides": [
+    {
+      "files": ["*.ts", "*.tsx", "*.js"],
+      "parser": "@typescript-eslint/parser"
+    }
+  ]
+}
