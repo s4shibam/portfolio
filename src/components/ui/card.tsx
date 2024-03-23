@@ -13,6 +13,7 @@ type TCard = {
   children: ReactNode
   className?: string
   titleClassName?: string
+  wrapperClassName?: string
   title?: string | ReactNode
   hoverGradient?: {
     light: string
@@ -25,6 +26,7 @@ const Card = ({
   children,
   className,
   titleClassName,
+  wrapperClassName,
   title,
   hoverGradient
 }: TCard) => {
@@ -58,7 +60,12 @@ const Card = ({
   }, [hoverGradient, cardColor])
 
   return (
-    <div className="flex flex-col-reverse">
+    <div
+      className={cn(
+        'mt-[-18px] flex flex-col-reverse sm:mt-[-22px]',
+        wrapperClassName
+      )}
+    >
       <motion.div
         ref={cardRef}
         className={cn(
