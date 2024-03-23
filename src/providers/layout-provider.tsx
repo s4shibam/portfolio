@@ -4,6 +4,7 @@ import { motion } from 'framer-motion'
 import { usePathname } from 'next/navigation'
 import { ThemeProvider } from 'next-themes'
 import { ReactNode } from 'react'
+import { Toaster } from 'react-hot-toast'
 
 import { pageTransition } from '@/animation/framer'
 import FocusLight from '@/common/focus-light'
@@ -29,6 +30,18 @@ const LayoutProvider = ({ children }: { children: ReactNode }) => {
 
         {pathname !== '/' && <p className="h-20 md:h-10" />}
       </motion.main>
+
+      <Toaster
+        position="bottom-center"
+        toastOptions={{
+          style: {
+            color: '#111',
+            background: '#fff',
+            maxWidth: '500px'
+          },
+          duration: 2000
+        }}
+      />
     </ThemeProvider>
   )
 }
