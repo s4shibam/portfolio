@@ -14,3 +14,35 @@ export const getProjectDetails = (projectId?: string) => {
 
   return allProjects.find((project) => project.id === projectId)
 }
+
+export const getPreviousAndNextProject = (projectId?: string) => {
+  if (!projectId) return
+
+  const allProjects = MAJOR_PROJECTS.concat(MINOR_PROJECTS)
+  const allProjectsLength = allProjects.length
+
+  const currentProjectIndex = allProjects.findIndex(
+    (project) => project.id === projectId
+  )
+
+  if (currentProjectIndex === -1) {
+    return null
+  }
+
+  const prevIndex =
+    currentProjectIndex === 0 ? allProjectsLength - 1 : currentProjectIndex - 1
+
+  const nextIndex =
+    currentProjectIndex + 1 === allProjectsLength ? 0 : currentProjectIndex + 1
+
+  return {
+    prev: {
+      id: allProjects[prevIndex].id,
+      name: allProjects[prevIndex].title
+    },
+    next: {
+      id: allProjects[nextIndex].id,
+      name: allProjects[nextIndex].title
+    }
+  }
+}
