@@ -44,7 +44,7 @@ const ProjectDetailsById = () => {
     <PageWrapper>
       <div className="flex items-center justify-between gap-5">
         <Link
-          className="grid place-items-center rounded-lg bg-gray-300 transition-opacity hover:opacity-75 dark:bg-zinc-800"
+          className="grid place-items-center rounded-lg bg-bg-lighter transition-opacity hover:opacity-75 dark:bg-bg-dark"
           href={'/projects/' + prevProject?.id}
         >
           <i className="bx bx-chevron-left bx-lg" />
@@ -55,7 +55,7 @@ const ProjectDetailsById = () => {
           heading={project?.title}
         />
         <Link
-          className="grid place-items-center rounded-lg bg-gray-300 transition-opacity hover:opacity-75 dark:bg-zinc-800"
+          className="grid place-items-center rounded-lg bg-bg-lighter transition-opacity hover:opacity-75 dark:bg-bg-dark"
           href={'/projects/' + nextProject?.id}
         >
           <i className="bx bx-chevron-right bx-lg" />
