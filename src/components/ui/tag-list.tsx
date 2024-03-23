@@ -29,7 +29,7 @@ const TagList = ({
       className={cn('flex flex-wrap gap-2 overflow-hidden', wrapperClassName)}
     >
       {data?.map((tech, i) => (
-        <Tag key={i} animation={animation} className={className} i={i + 1}>
+        <Tag key={i} animation={animation} className={className} i={i}>
           {tech}
         </Tag>
       ))}
@@ -52,7 +52,9 @@ export const Tag = ({
         'rounded-full bg-secondary px-3.5 py-1.5 text-sm font-medium tracking-wider text-text-black shadow-inner shadow-bg-dark drop-shadow-md dark:bg-primary dark:text-text-white dark:shadow-bg-light md:text-base',
         className
       )}
-      variants={animation ? fadeIn('left', 'tween', 50, 0.25 * i, 0.25) : {}}
+      variants={
+        animation ? fadeIn('left', 'tween', 50, 0.25 * (i + 1), 0.25) : {}
+      }
     >
       {children}
     </motion.span>
