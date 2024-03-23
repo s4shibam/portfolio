@@ -5,5 +5,12 @@
   "semi": false,
   "singleQuote": true,
   "arrowParens": "always",
+  "tailwindAttributes": [
+    "iconClassName",
+    "maskClassName",
+    "titleClassName",
+    "wrapperClassName"
+  ],
+  "tailwindFunctions": ["clsx", "cn"],
   "plugins": ["prettier-plugin-tailwindcss"]
 }
