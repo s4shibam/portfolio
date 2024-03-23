@@ -22,13 +22,13 @@ interface NavItemProps {
 
 const NavBar: FC = () => {
   return (
-    <div className="fixed inset-x-0 bottom-0 z-50 bg-bg-light/50 p-4 backdrop-blur-2xl dark:bg-bg-darker/50 sm:p-8 md:bottom-auto md:top-px">
+    <div className="fixed inset-x-0 bottom-0 z-50 bg-bg-light/50 p-4 backdrop-blur-2xl dark:bg-bg-darker/50 md:bottom-auto md:top-px md:p-8">
       <motion.div
         className="mx-auto flex h-11 max-w-portfolio items-center justify-between gap-4 sm:gap-10"
         variants={slideIn('up', 'tween', 50, 0.01, 0.5)}
       >
         <HomeButton className="hidden md:block" />
-        <nav className="mx-auto my-2 flex h-full w-fit items-center justify-between rounded-full bg-bg-lighter px-2 drop-shadow-md dark:bg-bg-dark md:px-4">
+        <nav className="mx-auto my-2 flex size-full items-center justify-between rounded-full bg-bg-lighter px-2 drop-shadow-md dark:bg-bg-dark md:w-fit md:px-4">
           <HomeButton className="mr-2 block md:hidden" />
           {NAV_ITEMS.map((item) => (
             <NavItem
