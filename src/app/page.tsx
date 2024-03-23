@@ -6,7 +6,6 @@ import Image from 'next/image'
 import { fadeIn } from '@/animation/framer'
 import PROFILE_IMG from '@/assets/me/profile-image.webp'
 import PageWrapper from '@/common/page-wrapper'
-import ToggleSound from '@/common/toggle-sound'
 import { HERO_PAGE_QUOTE, RESUME_LINK } from '@/constants/others'
 import { SOCIALS } from '@/constants/socials'
 import AnimatedBorderCard from '@/ui/animated-border-card'
@@ -56,7 +55,6 @@ const Home = () => {
         Resume
       </Button>
 
-      <ToggleSound />
     </PageWrapper>
   )
 }
