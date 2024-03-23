@@ -31,6 +31,7 @@ A computer science undergrad's portfolio website showcasing all accomplishments 
 
 - ES Lint
 - Boxicons
+- React Simple Icons
 - Email JS
 
 ## 🎯 Goals
@@ -38,9 +39,11 @@ A computer science undergrad's portfolio website showcasing all accomplishments 
 - [x] Design and create a visually stunning portfolio with captivating animations
 - [x] Integrate email functionality seamlessly using Email JS for enhanced communication
 
-## 🖼️ Preview
+## 🖼️ Screenshots
 
-<img src="./readme_assets/portfolio-tour.gif" alt="Portfolio Tour" style="max-width: 500px;">
+![Hero](./readme_assets/screenshot_1.png)
+![Stacks](./readme_assets/screenshot_2.png)
+![Projects](./readme_assets/screenshot_3.png)
 
 ## 👋🏻 Contact
 
