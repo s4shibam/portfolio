@@ -9,6 +9,7 @@ import SCRENOO from '@/projects/screnoo.webp'
 import SUDOKU_WIZARD from '@/projects/sudoku-wizard.webp'
 
 export type TProject = {
+  id: string
   title: string
   image: any
   summary: string
@@ -36,6 +37,7 @@ export const MINOR_PROJECT_HEADER = {
 
 export const MAJOR_PROJECTS: TProject[] = [
   {
+    id: 'ckret',
     title: 'Ckret',
     image: CKRET,
     color: '#FF8A00',
@@ -75,6 +77,7 @@ export const MAJOR_PROJECTS: TProject[] = [
     ]
   },
   {
+    id: 'quizzy',
     title: 'Quizzy',
     image: QUIZZY,
     color: '#18A08B',
@@ -114,6 +117,7 @@ export const MAJOR_PROJECTS: TProject[] = [
     ]
   },
   {
+    id: 'sudoku_wizard',
     title: 'Sudoku Wizard',
     image: SUDOKU_WIZARD,
     color: '#7373E2',
@@ -141,6 +145,7 @@ export const MAJOR_PROJECTS: TProject[] = [
     techs: ['html', 'tailwindcss', 'javascript']
   },
   {
+    id: 'certivita',
     title: 'Certivita',
     image: CERTIVITA,
     color: '#0099FF',
@@ -171,6 +176,7 @@ export const MAJOR_PROJECTS: TProject[] = [
 
 export const MINOR_PROJECTS: TProject[] = [
   {
+    id: 'screnoo',
     title: 'Screnoo',
     image: SCRENOO,
     color: '#5EEAD4',
@@ -198,6 +204,7 @@ export const MINOR_PROJECTS: TProject[] = [
     techs: ['html', 'tailwindcss', 'javascript']
   },
   {
+    id: 'filmingg',
     title: 'Filmingg',
     image: FILMINGG,
     color: '#FA4000',
@@ -225,6 +232,7 @@ export const MINOR_PROJECTS: TProject[] = [
     techs: ['html', 'tailwindcss', 'javascript']
   },
   {
+    id: 'calculator',
     title: 'Calculator',
     image: CALCULATOR,
     color: '#009245',
@@ -251,6 +259,7 @@ export const MINOR_PROJECTS: TProject[] = [
     techs: ['html', 'css', 'javascript']
   },
   {
+    id: 'digital_clock',
     title: 'Digital Clock',
     image: DIGITAL_CLOCK,
     color: '#C33764',
@@ -277,6 +286,7 @@ export const MINOR_PROJECTS: TProject[] = [
     techs: ['html', 'css', 'javascript']
   },
   {
+    id: 'registration_form_ui',
     title: 'Registration Form UI',
     image: REGISTRATION_FORM_UI,
     color: '#E100FF',
