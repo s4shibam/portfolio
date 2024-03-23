@@ -209,7 +209,7 @@ const ContactModal: FC<ContactModalProps> = ({ close }) => {
                 disabled={loading}
                 icon={loading ? 'bx-loader bx-spin' : 'bx-x-circle'}
                 type="reset"
-                wrapperClassName="disabled:cursor-not-allowed disabled:!opacity-50 md:px-6 bg-gradient-to-bl before:bg-gradient-to-tr"
+                wrapperClassName="bg-gradient-to-bl before:bg-gradient-to-tr disabled:cursor-not-allowed disabled:!opacity-50 md:px-6"
                 onClick={() => {
                   setIsReasonSelected(false)
                 }}
