@@ -25,7 +25,7 @@ const AnimatedBorderCard = ({ className, children }: TAnimatedBorder) => {
     >
       {children}
       <div
-        className="group-hover:animate-pause absolute size-[150%] animate-[spin_20s_linear_infinite]"
+        className="group-hover:animate-pause absolute size-[110vw] animate-[spin_20s_linear_infinite]"
         style={{
           background: `conic-gradient(${colors.primary} 0deg 160deg, ${midColor} 160deg 180deg, 
                         ${colors.secondary} 180deg 340deg, ${midColor} 340deg 360deg)`
