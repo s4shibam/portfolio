@@ -5,11 +5,10 @@ import Image from 'next/image'
 
 import { fadeIn, slideIn } from '@/animation/framer'
 import ABOUT_IMG from '@/assets/me/about-image.webp'
-import ContactModal from '@/common/contact-modal'
 import PageWrapper from '@/common/page-wrapper'
 import { ABOUT, ABOUT_HEADER } from '@/constants/about'
 import { CODING_PROFILES } from '@/constants/coding-profiles'
-import useOpenClose from '@/hooks/use-open-close'
+import { CURRENT_STATUS } from '@/constants/others'
 import { getRandomGradient, gradients } from '@/lib/card-hover-gradients'
 import AnimatedBorderCard from '@/ui/animated-border-card'
 import Button from '@/ui/button'
@@ -18,9 +17,6 @@ import IconList from '@/ui/icon-list'
 import PageHeading from '@/ui/page-heading'
 
 const About = () => {
-  const { isOpen, open, close } = useOpenClose()
-  const CurrentStatus = 'Presently SDE Intern at Jellybean'
-
   return (
     <PageWrapper>
       <PageHeading header={ABOUT_HEADER} />
@@ -39,9 +35,9 @@ const About = () => {
           className="mb-4 text-center font-medium"
           variants={fadeIn('down', 'tween', 50, 0.25, 0.25)}
         >
-          {CurrentStatus}
+          {CURRENT_STATUS}
         </motion.p>
-        <Button className="px-2" icon="bx-paper-plane" onClick={open}>
+        <Button className="px-2" icon="bx-paper-plane" link="/contact">
           Say Hi!
         </Button>
       </div>
@@ -84,8 +80,6 @@ const About = () => {
           ))}
         </div>
       </Card>
-
-      {isOpen && <ContactModal close={close} />}
     </PageWrapper>
   )
 }
