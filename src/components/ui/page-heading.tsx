@@ -6,6 +6,7 @@ import { fadeIn } from '@/animation/framer'
 import { cn } from '@/utils/functions'
 
 type TPageHeadingProps = {
+  dot?: boolean
   className?: string
   header?: {
     heading?: string
@@ -16,6 +17,7 @@ type TPageHeadingProps = {
 }
 
 const PageHeading = ({
+  dot = false,
   className,
   header,
   heading,
@@ -39,7 +41,8 @@ const PageHeading = ({
       {heading && (
         <h3 className="text-center text-2xl font-bold text-text-black dark:text-text-white sm:text-4xl">
           {heading}
-          <span className="text-primary dark:text-secondary">.</span>
+
+          {dot && <span className="text-primary dark:text-secondary">.</span>}
         </h3>
       )}
       {subHeading && (
