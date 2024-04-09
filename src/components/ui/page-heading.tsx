@@ -17,7 +17,7 @@ type TPageHeadingProps = {
 }
 
 const PageHeading = ({
-  dot = false,
+  dot = true,
   className,
   header,
   heading,
