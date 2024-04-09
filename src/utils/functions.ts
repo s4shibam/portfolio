@@ -2,7 +2,7 @@ import { clsx, type ClassValue } from 'clsx'
 import { twMerge } from 'tailwind-merge'
 
 import { MAJOR_PROJECTS, MINOR_PROJECTS } from '@/constants/projects'
-import { SOCIALS } from '@/constants/socials'
+import { BOXICONS } from '@/lib/box-icons'
 
 export const cn = (...inputs: ClassValue[]) => {
   return twMerge(clsx(inputs))
@@ -48,13 +48,14 @@ export const getPreviousAndNextProject = (projectId?: string) => {
   }
 }
 
-export const getHardExternalLinksToRedirect = () => {
-  const socialLinks = SOCIALS.map((social) => ({
-    source: '/_' + social.id,
-    destination: social.href,
-    permanent: true,
-    basePath: false
-  }))
+export const getBoxIcon = (id: string) => {
+  const boxIconId = Object.entries(BOXICONS).find(
+    (entry) => entry[0] === id
+  )?.[0]
 
-  return socialLinks
+  if (!boxIconId) {
+    return 'bx ' + BOXICONS.default
+  }
+
+  return 'bx ' + BOXICONS[boxIconId as keyof typeof BOXICONS]
 }
