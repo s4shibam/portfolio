@@ -1,30 +1,25 @@
 import { NextResponse } from 'next/server'
 import type { NextRequest } from 'next/server'
 
-import { getHardExternalLinksToRedirect } from '@/utils/functions'
-
 export async function middleware(req: NextRequest) {
-  if (req.nextUrl.pathname.startsWith('/_')) {
-    const hardLinks = getHardExternalLinksToRedirect()
-
-    const redirect = hardLinks.find(
-      (link) => req.nextUrl.pathname === link.source
-    )
-
-    if (redirect?.destination?.startsWith('http')) {
-      return NextResponse.redirect(new URL(redirect.destination))
-    }
+  if (req.nextUrl.pathname.startsWith('/_next')) {
+    return NextResponse.next()
   }
 
-  if (req.nextUrl.pathname.startsWith('/r_')) {
-    const resumeCode = req.nextUrl.pathname.split('/r_').pop()
+  const isRedirectableLink =
+    req.nextUrl.pathname.startsWith('/_') ||
+    req.nextUrl.pathname.startsWith('/r_')
 
-    const resume = await (
-      await fetch(new URL(`/api/resume/${resumeCode}`, req.url))
-    ).json()
+  if (isRedirectableLink) {
+    const id = req.nextUrl.pathname.split('/')?.pop()
+    if (id) {
+      const link = await (
+        await fetch(new URL(`/api/link/${id}`, req.url))
+      ).json()
 
-    if (!resume.error && resume.link?.startsWith('http')) {
-      return NextResponse.redirect(new URL(resume.link))
+      if (!link.error && link.destination?.startsWith('http')) {
+        return NextResponse.redirect(new URL(link.destination))
+      }
     }
   }
 
