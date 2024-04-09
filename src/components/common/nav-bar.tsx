@@ -5,22 +5,15 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useTheme } from 'next-themes'
-import { FC } from 'react'
 
 import { slideIn } from '@/animation/framer'
-import { NAV_ITEMS } from '@/constants/nav-items'
+import { NAV_ITEMS, TNavItem } from '@/constants/nav-items'
 import DARK_MODE from '@/icons/dark-mode.svg'
 import LIGHT_MODE from '@/icons/light-mode.svg'
 import LOGO from '@/icons/logo.svg'
-import { cn } from '@/utils/functions'
+import { cn, getBoxIcon } from '@/utils/functions'
 
-interface NavItemProps {
-  text: string
-  boxIcon?: string
-  link: string
-}
-
-const NavBar: FC = () => {
+const NavBar = () => {
   return (
     <div className="fixed inset-x-0 bottom-0 z-50 bg-bg-light/50 p-4 backdrop-blur-2xl dark:bg-bg-darker/50 md:bottom-auto md:top-0 md:p-8">
       <motion.div
@@ -31,12 +24,7 @@ const NavBar: FC = () => {
         <nav className="mx-auto my-2 flex size-full items-center justify-between rounded-full bg-bg-lighter px-2 drop-shadow-md dark:bg-bg-dark md:w-fit md:px-4">
           <HomeButton className="mr-2 block md:hidden" />
           {NAV_ITEMS.map((item) => (
-            <NavItem
-              key={item.title}
-              boxIcon={item.boxIcon}
-              link={item.link}
-              text={item.title}
-            />
+            <NavItem key={item.iconId} item={item} />
           ))}
           <ToggleTheme className="ml-2 block md:hidden" />
         </nav>
@@ -49,7 +37,8 @@ const NavBar: FC = () => {
 export default NavBar
 
 // Components
-const NavItem = ({ text, boxIcon, link }: NavItemProps) => {
+const NavItem = ({ item }: { item: TNavItem }) => {
+  const { iconId, link } = item
   // Check if the current route matches the link
   const isActiveLink = usePathname() === link
 
@@ -65,10 +54,10 @@ const NavItem = ({ text, boxIcon, link }: NavItemProps) => {
       id={link}
     >
       <i
-        className={`bx ${boxIcon} text-2xl transition-colors duration-300 ease-in-out group-hover:text-primary dark:group-hover:text-secondary md:hidden`}
+        className={`${getBoxIcon(iconId)} text-2xl transition-colors duration-300 ease-in-out group-hover:text-primary dark:group-hover:text-secondary md:hidden`}
       />
-      <p className="hidden text-lg font-semibold tracking-wider transition-colors duration-300 ease-in-out group-hover:text-primary dark:group-hover:text-secondary md:block">
-        {text}
+      <p className="hidden text-lg font-semibold capitalize tracking-wider transition-colors duration-300 ease-in-out group-hover:text-primary dark:group-hover:text-secondary md:block">
+        {iconId}
       </p>
       {isActiveLink && (
         <span className="absolute bottom-0 left-3 h-px w-[calc(100%-1.5rem)] bg-gradient-to-r from-transparent via-primary to-transparent transition-opacity duration-500 group-hover:opacity-50 dark:via-secondary" />
