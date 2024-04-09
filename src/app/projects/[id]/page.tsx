@@ -13,7 +13,11 @@ import Card from '@/ui/card'
 import IconList from '@/ui/icon-list'
 import PageHeading from '@/ui/page-heading'
 import TagList from '@/ui/tag-list'
-import { getPreviousAndNextProject, getProjectDetails } from '@/utils/functions'
+import {
+  getBoxIcon,
+  getPreviousAndNextProject,
+  getProjectDetails
+} from '@/utils/functions'
 
 const ProjectDetailsById = () => {
   const router = useRouter()
@@ -79,26 +83,21 @@ const ProjectDetailsById = () => {
 
       <Card hoverGradient={getRandomGradient()} i={2} title="Project Links">
         <div className="grid grid-cols-[auto_1fr] items-center gap-2">
-          {project?.links.map((projectLink, i) => (
+          {project?.links.map(({ iconId, destination }, i) => (
             <Fragment key={i}>
-              <div className="flex h-full items-center gap-2 rounded-lg bg-bg-light px-2 py-1 dark:bg-bg-light/10">
-                <i
-                  className={`bx ${projectLink.linkTypeBoxIcon} bx-sm pt-px`}
-                />
+              <div className="flex h-full items-center gap-2 rounded-lg bg-bg-light px-3 py-1 dark:bg-bg-darker">
+                <i className={`${getBoxIcon(iconId)} bx-sm pt-px`} />
                 <p className="hidden font-medium capitalize sm:block">
-                  {projectLink.linkType}
+                  {iconId}
                 </p>
               </div>
               <a
-                className="line-clamp-1 flex w-fit max-w-full items-center gap-2 truncate rounded-lg bg-bg-light px-2 py-1 hover:text-primary dark:bg-bg-light/10 dark:hover:text-secondary"
-                href={projectLink.linkHost}
+                className="line-clamp-1 flex w-fit max-w-full items-center gap-2 truncate rounded-lg bg-bg-light px-3 py-1 hover:text-primary dark:bg-bg-darker dark:hover:text-secondary"
+                href={destination}
                 target="_blank"
               >
-                <i
-                  className={`bx ${projectLink.linkHostBoxIcon} bx-sm pt-px`}
-                />
                 <code className="line-clamp-1">
-                  {projectLink.linkHost.split('https://').pop()}
+                  {destination.split('https://').pop()}
                 </code>
               </a>
             </Fragment>
