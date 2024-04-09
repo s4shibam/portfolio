@@ -7,28 +7,28 @@ import {
 
 export type TCodingProfile = {
   name: string
+  source: string
   Icon: IconType
-  link: string
   color: string
 }
 
 export const CODING_PROFILES: TCodingProfile[] = [
   {
     name: 'LeetCode',
+    source: 'lc',
     Icon: SiLeetcode,
-    link: 'https://leetcode.com/s4shibam',
     color: '#FFA116'
   },
   {
     name: 'CodeChef',
+    source: 'cc',
     Icon: SiCodechef,
-    link: 'https://www.codechef.com/users/s4shibam',
     color: '#5B4638'
   },
   {
     name: 'CodeForces',
+    source: 'cf',
     Icon: SiCodeforces,
-    link: 'https://codeforces.com/profile/s4shibam',
     color: '#1F8ACB'
   }
 ]

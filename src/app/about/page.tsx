@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import Image from 'next/image'
+import Link from 'next/link'
 
 import { fadeIn, slideIn } from '@/animation/framer'
 import ABOUT_IMG from '@/assets/me/about-image.webp'
@@ -55,7 +56,7 @@ const About = () => {
       <Card hoverGradient={getRandomGradient()} title="coding profiles">
         <div className="flex flex-wrap gap-3">
           {CODING_PROFILES?.map((profile, i) => (
-            <a key={i} href={profile?.link} target="_blank">
+            <Link key={i} href={'/_' + profile?.source} target="_blank">
               <motion.div
                 className="flex items-center gap-3 rounded-xl border-2 bg-bg-light p-1.5 pr-5 dark:bg-bg-darker"
                 style={{ borderColor: profile.color }}
@@ -75,7 +76,7 @@ const About = () => {
                   {profile?.name}
                 </p>
               </motion.div>
-            </a>
+            </Link>
           ))}
         </div>
       </Card>
