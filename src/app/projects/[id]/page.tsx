@@ -66,7 +66,7 @@ const ProjectDetailsById = () => {
         <AnimatedBorderCard>
           <Image
             alt={project?.title}
-            className="z-10 w-full rounded-3xl object-cover"
+            className="object-cover"
             src={project?.image}
             style={{ borderColor: project?.color }}
           />

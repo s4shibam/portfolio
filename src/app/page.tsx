@@ -15,11 +15,10 @@ import SocialIcon from '@/ui/social-icon'
 const Home = () => {
   return (
     <PageWrapper className="relative mt-5 items-center md:mt-0">
-      <AnimatedBorderCard className="aspect-square w-1/2 min-w-[280px] max-w-[325px]">
+      <AnimatedBorderCard wrapperClassName="aspect-square w-1/2 min-w-[280px] max-w-[325px]">
         <Image
           alt="Shibam Saha"
-          className="z-10 w-full rounded-3xl object-cover"
-          placeholder="blur"
+          className="object-cover"
           src={PROFILE_IMG}
           width={450}
         />
@@ -46,15 +45,14 @@ const Home = () => {
       </div>
 
       <div className="mb-2 space-x-2 sm:space-x-4">
-        {SOCIALS?.map((link, i) => (
-          <SocialIcon key={i} index={i} link={link} />
+        {SOCIALS?.map((social, i) => (
+          <SocialIcon key={i} index={i} social={social} />
         ))}
       </div>
 
       <Button icon="bx-cloud-download" link={RESUME_LINK}>
         Resume
       </Button>
-
     </PageWrapper>
   )
 }

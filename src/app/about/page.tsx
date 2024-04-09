@@ -22,11 +22,10 @@ const About = () => {
       <PageHeading header={ABOUT_HEADER} />
 
       <div className="mb-6 flex w-full flex-col items-center gap-3">
-        <AnimatedBorderCard className="aspect-square min-w-[280px] max-w-[325px]">
+        <AnimatedBorderCard wrapperClassName="aspect-square min-w-[280px] max-w-[325px]">
           <Image
             alt="Shibam Saha"
-            className="z-10 w-full rounded-3xl object-cover"
-            placeholder="blur"
+            className="object-cover"
             src={ABOUT_IMG}
             width={450}
           />

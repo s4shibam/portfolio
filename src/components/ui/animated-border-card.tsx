@@ -8,22 +8,31 @@ import { cn } from '@/utils/functions'
 
 type TAnimatedBorder = {
   className?: string
+  wrapperClassName?: string
   children: ReactNode
 }
 
-const AnimatedBorderCard = ({ className, children }: TAnimatedBorder) => {
+const AnimatedBorderCard = ({
+  className,
+  wrapperClassName,
+  children
+}: TAnimatedBorder) => {
   const { theme } = useTheme()
   const midColor = theme === 'dark' ? colors.bg.dark : colors.bg.lighter
 
   return (
     <motion.div
       className={cn(
-        'group relative grid place-items-center overflow-hidden rounded-[27px] p-1 drop-shadow-lg',
-        className
+        'group relative grid place-items-center overflow-hidden rounded-3xl p-1 drop-shadow-lg',
+        wrapperClassName
       )}
       variants={fadeIn('down', 'tween', 25, 0.2, 0.7)}
     >
-      {children}
+      <div
+        className={cn('z-10 w-full overflow-hidden rounded-[20px]', className)}
+      >
+        {children}
+      </div>
       <div
         className="group-hover:animate-pause absolute size-[110vw] animate-[spin_20s_linear_infinite]"
         style={{
