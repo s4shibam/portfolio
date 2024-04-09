@@ -22,7 +22,7 @@ interface NavItemProps {
 
 const NavBar: FC = () => {
   return (
-    <div className="fixed inset-x-0 bottom-0 z-50 bg-bg-light/50 p-4 backdrop-blur-2xl dark:bg-bg-darker/50 md:bottom-auto md:top-px md:p-8">
+    <div className="fixed inset-x-0 bottom-0 z-50 bg-bg-light/50 p-4 backdrop-blur-2xl dark:bg-bg-darker/50 md:bottom-auto md:top-0 md:p-8">
       <motion.div
         className="mx-auto flex h-11 max-w-portfolio items-center justify-between gap-4 sm:gap-10"
         variants={slideIn('up', 'tween', 50, 0.01, 0.5)}
