@@ -1,40 +1,28 @@
 export type TNavItem = {
-  id: string
-  title: string
-  boxIcon: string
+  iconId: string
   link: string
 }
 
 export const NAV_ITEMS: TNavItem[] = [
   {
-    id: 'projects',
-    title: 'Projects',
-    boxIcon: 'bx-briefcase',
+    iconId: 'projects',
     link: '/projects'
   },
   {
-    id: 'experiences',
-    title: 'Experiences',
-    boxIcon: 'bx-trophy',
+    iconId: 'experiences',
     link: '/experiences'
   },
   {
-    id: 'stacks',
-    title: 'Stacks',
-    boxIcon: 'bx-command',
+    iconId: 'stacks',
     link: '/stacks'
   },
   // TODO: Enable when content available
   // {
-  //   id: 'snips',
-  //   title: 'Snips',
-  //   boxIcon: 'bx-cookie',
+  //   iconId: 'snips',
   //   link: '/snips'
   // },
   {
-    id: 'about',
-    title: 'About',
-    boxIcon: 'bx-user',
+    iconId: 'about',
     link: '/about'
   }
 ]

@@ -1,3 +1,4 @@
+import { BOXICONS } from '@/lib/box-icons'
 import CALCULATOR from '@/projects/calculator.webp'
 import CERTIVITA from '@/projects/certivita.webp'
 import CKRET from '@/projects/ckret.webp'
@@ -14,10 +15,8 @@ export type TProject = {
   image: any
   summary: string
   links: {
-    linkType: string
-    linkTypeBoxIcon: string
-    linkHost: string
-    linkHostBoxIcon: string
+    iconId: keyof typeof BOXICONS
+    destination: string
   }[]
   features: string[]
   techs: string[]
@@ -45,16 +44,12 @@ export const MAJOR_PROJECTS: TProject[] = [
       'Ckret is an anonymous messaging platform. Exchange anonymous questions, feedback, suggestions, dares, and challenges with your friends, families, and coworkers.',
     links: [
       {
-        linkType: 'code',
-        linkTypeBoxIcon: 'bx-terminal',
-        linkHost: 'https://github.com/s4shibam/ckret',
-        linkHostBoxIcon: 'bxl-github'
+        iconId: 'github',
+        destination: 'https://github.com/s4shibam/ckret'
       },
       {
-        linkType: 'demo',
-        linkTypeBoxIcon: 'bx-link-external',
-        linkHost: 'https://ckret.shibamsaha.dev',
-        linkHostBoxIcon: 'bx-globe'
+        iconId: 'live',
+        destination: 'https://ckret.xyz'
       }
     ],
     features: [
@@ -85,16 +80,12 @@ export const MAJOR_PROJECTS: TProject[] = [
       'Quizzy is a platform for online computer science or coding quizzes, as well as learning new topics by watching video content on the platform.',
     links: [
       {
-        linkType: 'code',
-        linkTypeBoxIcon: 'bx-terminal',
-        linkHost: 'https://github.com/s4shibam/quizzy',
-        linkHostBoxIcon: 'bxl-github'
+        iconId: 'github',
+        destination: 'https://github.com/s4shibam/quizzy'
       },
       {
-        linkType: 'demo',
-        linkTypeBoxIcon: 'bx-link-external',
-        linkHost: 'https://quizzy.shibamsaha.dev',
-        linkHostBoxIcon: 'bx-globe'
+        iconId: 'live',
+        destination: 'https://quizzy.shibamsaha.dev'
       }
     ],
     features: [
@@ -125,16 +116,12 @@ export const MAJOR_PROJECTS: TProject[] = [
       'Sudoku Wizard is an algorithmic project based on Backtracking Algorithm. This project illustrates the operation of the backtracking algorithm, which is used to solve any sudoku puzzle.',
     links: [
       {
-        linkType: 'code',
-        linkTypeBoxIcon: 'bx-terminal',
-        linkHost: 'https://github.com/s4shibam/sudoku-wizard',
-        linkHostBoxIcon: 'bxl-github'
+        iconId: 'github',
+        destination: 'https://github.com/s4shibam/sudoku-wizard'
       },
       {
-        linkType: 'demo',
-        linkTypeBoxIcon: 'bx-link-external',
-        linkHost: 'https://sudoku-wizard.shibamsaha.dev',
-        linkHostBoxIcon: 'bx-globe'
+        iconId: 'live',
+        destination: 'https://sudoku-wizard.shibamsaha.dev'
       }
     ],
     features: [
@@ -153,16 +140,12 @@ export const MAJOR_PROJECTS: TProject[] = [
       'Certivita is an online tool that helps to generate fully customizable personalized certificates.',
     links: [
       {
-        linkType: 'code',
-        linkTypeBoxIcon: 'bx-terminal',
-        linkHost: 'https://github.com/s4shibam/certivita',
-        linkHostBoxIcon: 'bxl-github'
+        iconId: 'github',
+        destination: 'https://github.com/s4shibam/certivita'
       },
       {
-        linkType: 'demo',
-        linkTypeBoxIcon: 'bx-link-external',
-        linkHost: 'https://certivita.shibamsaha.dev',
-        linkHostBoxIcon: 'bx-globe'
+        iconId: 'live',
+        destination: 'https://certivita.shibamsaha.dev'
       }
     ],
     features: [
@@ -184,16 +167,12 @@ export const MINOR_PROJECTS: TProject[] = [
       'Screnoo is a PC Screen recorder which helps to record desktop or laptop screen along with system or user audio.',
     links: [
       {
-        linkType: 'code',
-        linkTypeBoxIcon: 'bx-terminal',
-        linkHost: 'https://github.com/s4shibam/screnoo',
-        linkHostBoxIcon: 'bxl-github'
+        iconId: 'github',
+        destination: 'https://github.com/s4shibam/screnoo'
       },
       {
-        linkType: 'demo',
-        linkTypeBoxIcon: 'bx-link-external',
-        linkHost: 'https://screnoo.shibamsaha.dev',
-        linkHostBoxIcon: 'bx-globe'
+        iconId: 'live',
+        destination: 'https://screnoo.shibamsaha.dev'
       }
     ],
     features: [
@@ -212,16 +191,12 @@ export const MINOR_PROJECTS: TProject[] = [
       'Filmingg is a Movie searching / guide web application backed up by OMDB API.',
     links: [
       {
-        linkType: 'code',
-        linkTypeBoxIcon: 'bx-terminal',
-        linkHost: 'https://github.com/s4shibam/filmingg',
-        linkHostBoxIcon: 'bxl-github'
+        iconId: 'github',
+        destination: 'https://github.com/s4shibam/filmingg'
       },
       {
-        linkType: 'demo',
-        linkTypeBoxIcon: 'bx-link-external',
-        linkHost: 'https://filmingg.shibamsaha.dev',
-        linkHostBoxIcon: 'bx-globe'
+        iconId: 'live',
+        destination: 'https://filmingg.shibamsaha.dev'
       }
     ],
     features: [
@@ -239,16 +214,12 @@ export const MINOR_PROJECTS: TProject[] = [
     summary: 'This is a simple responsive Calculator.',
     links: [
       {
-        linkType: 'code',
-        linkTypeBoxIcon: 'bx-terminal',
-        linkHost: 'https://github.com/s4shibam/calculator',
-        linkHostBoxIcon: 'bxl-github'
+        iconId: 'github',
+        destination: 'https://github.com/s4shibam/calculator'
       },
       {
-        linkType: 'demo',
-        linkTypeBoxIcon: 'bx-link-external',
-        linkHost: 'https://calculator.shibamsaha.dev',
-        linkHostBoxIcon: 'bx-globe'
+        iconId: 'live',
+        destination: 'https://calculator.shibamsaha.dev'
       }
     ],
     features: [
@@ -266,16 +237,12 @@ export const MINOR_PROJECTS: TProject[] = [
     summary: 'This is a simple responsive Digital Clock.',
     links: [
       {
-        linkType: 'code',
-        linkTypeBoxIcon: 'bx-terminal',
-        linkHost: 'https://github.com/s4shibam/digital-clock',
-        linkHostBoxIcon: 'bxl-github'
+        iconId: 'github',
+        destination: 'https://github.com/s4shibam/digital-clock'
       },
       {
-        linkType: 'demo',
-        linkTypeBoxIcon: 'bx-link-external',
-        linkHost: 'https://digital-clock.shibamsaha.dev',
-        linkHostBoxIcon: 'bx-globe'
+        iconId: 'live',
+        destination: 'https://digital-clock.shibamsaha.dev'
       }
     ],
     features: [
@@ -294,16 +261,12 @@ export const MINOR_PROJECTS: TProject[] = [
       'This is a simple front end of a user registration or signup form with glassmorphism styled interface.',
     links: [
       {
-        linkType: 'code',
-        linkTypeBoxIcon: 'bx-terminal',
-        linkHost: 'https://github.com/s4shibam/registration-form-ui',
-        linkHostBoxIcon: 'bxl-github'
+        iconId: 'github',
+        destination: 'https://github.com/s4shibam/registration-form-ui'
       },
       {
-        linkType: 'demo',
-        linkTypeBoxIcon: 'bx-link-external',
-        linkHost: 'https://registration-form-ui.shibamsaha.dev',
-        linkHostBoxIcon: 'bx-globe'
+        iconId: 'live',
+        destination: 'https://registration-form-ui.shibamsaha.dev'
       }
     ],
     features: ['Responsive User Interface', 'Glassmorphism Effect'],
