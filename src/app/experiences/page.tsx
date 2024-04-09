@@ -27,7 +27,7 @@ const Experience = () => {
             i={i}
             title={`${experience.designation} (at) ${experience.company.name}`}
           >
-            <div className="flex flex-col gap-3">
+            <div className="flex flex-col gap-6">
               <div className="flex w-[calc(100%+24px)] -translate-x-3 flex-wrap gap-2 border-b-2 bg-bg-lighter p-4 pt-[calc(1.125rem+0.75rem)] dark:bg-bg-dark sm:pt-[calc(1.375rem+0.75rem)]">
                 <motion.div
                   className="flex items-center gap-2 rounded-full bg-bg-darker/10 px-4 py-1.5 pl-2 dark:bg-bg-light/10"
