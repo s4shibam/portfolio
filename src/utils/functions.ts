@@ -2,6 +2,7 @@ import { clsx, type ClassValue } from 'clsx'
 import { twMerge } from 'tailwind-merge'
 
 import { MAJOR_PROJECTS, MINOR_PROJECTS } from '@/constants/projects'
+import { SOCIALS } from '@/constants/socials'
 
 export const cn = (...inputs: ClassValue[]) => {
   return twMerge(clsx(inputs))
@@ -45,4 +46,15 @@ export const getPreviousAndNextProject = (projectId?: string) => {
       name: allProjects[nextIndex].title
     }
   }
+}
+
+export const getHardExternalLinksToRedirect = () => {
+  const socialLinks = SOCIALS.map((social) => ({
+    source: '/_' + social.id,
+    destination: social.href,
+    permanent: true,
+    basePath: false
+  }))
+
+  return socialLinks
 }
