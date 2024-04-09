@@ -2,8 +2,16 @@ import { NextResponse } from 'next/server'
 import type { NextRequest } from 'next/server'
 
 export async function middleware(req: NextRequest) {
+  const requestHeaders = new Headers(req.headers)
+  requestHeaders.set('x-request-url', req.url)
+  const options = {
+    request: {
+      headers: requestHeaders
+    }
+  }
+
   if (req.nextUrl.pathname.startsWith('/_next')) {
-    return NextResponse.next()
+    return NextResponse.next(options)
   }
 
   const isRedirectableLink =
@@ -23,5 +31,5 @@ export async function middleware(req: NextRequest) {
     }
   }
 
-  return NextResponse.next()
+  return NextResponse.next(options)
 }
