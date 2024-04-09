@@ -24,7 +24,7 @@ const SocialIcon = ({ social, index }: Props) => {
       )}
       variants={zoomIn(0.25 * index, 0.5)}
     >
-      <Link href={'/' + id} target="_blank">
+      <Link href={'/_' + id} target="_blank">
         <motion.div
           className="grid size-10 origin-center place-items-center sm:size-12"
           whileHover={{ scale: 2 }}
