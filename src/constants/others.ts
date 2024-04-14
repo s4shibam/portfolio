@@ -1,3 +1,5 @@
+export const GA_MEASUREMENT_ID = process.env.GA_MEASUREMENT_ID
+
 export const APP_URL = process.env.NEXT_PUBLIC_APP_URL || ''
 
 export const HERO_PAGE_QUOTE = 'Crafting solutions through the art of code'

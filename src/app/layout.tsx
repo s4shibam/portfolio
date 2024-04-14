@@ -10,6 +10,7 @@ import { APP_URL } from '@/constants/others'
 import { colors } from '@/lib/theme'
 import LayoutProvider from '@/providers/layout-provider'
 import { getProjectDetails } from '@/utils/functions'
+import GoogleAnalytics from 'components/analytics/google-analytics'
 
 const outfit = Outfit({ subsets: ['latin'] })
 
@@ -71,6 +72,7 @@ const RootLayout = ({ children }: { children: ReactNode }) => {
   return (
     <html lang="en">
       <body className={outfit.className}>
+        <GoogleAnalytics />
         <LayoutProvider>{children}</LayoutProvider>
       </body>
     </html>
