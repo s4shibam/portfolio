@@ -8,7 +8,7 @@ const NotFound = () => {
   return (
     <PageWrapper className="flex h-[calc(100vh-12rem)] flex-col items-center justify-center gap-10">
       <Image
-        alt=""
+        alt="404"
         className="aspect-square w-2/3 max-w-xs rounded-2xl"
         src={ERROR}
       />

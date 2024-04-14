@@ -70,9 +70,11 @@ const ProjectDetailsById = () => {
         <AnimatedBorderCard>
           <Image
             alt={project?.title}
-            className="object-cover"
+            className="h-auto w-full object-cover"
+            height={400}
             src={project?.image}
             style={{ borderColor: project?.color }}
+            width={800}
           />
         </AnimatedBorderCard>
       )}

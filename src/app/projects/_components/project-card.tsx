@@ -13,7 +13,7 @@ const ProjectCard = ({ i, project }: { i: number; project: TProject }) => {
       key={i}
       className="group relative grid aspect-[1920/940] w-full place-items-center overflow-hidden rounded-xl border-2 drop-shadow-md"
       style={{
-        background: `linear-gradient(to bottom right, ${project.color}, transparent 50%, transparent)`,
+        background: `linear-gradient(to bottom right, ${project.color}, transparent, transparent)`,
         borderColor: project.color
       }}
       variants={fadeIn('left', 'tween', 50, 0.25 * (i + 1), 0.5)}
@@ -25,8 +25,9 @@ const ProjectCard = ({ i, project }: { i: number; project: TProject }) => {
         <Image
           alt={project?.title}
           className="rounded-lg drop-shadow-md"
-          placeholder="blur"
+          height={200}
           src={project?.image}
+          width={350}
         />
       </div>
       <Link

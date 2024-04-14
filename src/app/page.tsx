@@ -11,14 +11,17 @@ import { SOCIALS } from '@/constants/socials'
 import AnimatedBorderCard from '@/ui/animated-border-card'
 import Button from '@/ui/button'
 import SocialIcon from '@/ui/social-icon'
+import { cn } from '@/utils/functions'
 
 const Home = () => {
   return (
-    <PageWrapper className="relative mt-5 items-center md:mt-0">
+    <PageWrapper className={cn('relative mt-5 items-center md:mt-0')}>
       <AnimatedBorderCard wrapperClassName="aspect-square w-1/2 min-w-[280px] max-w-[325px]">
         <Image
+          priority
           alt="Shibam Saha"
           className="object-cover"
+          height={450}
           src={PROFILE_IMG}
           width={450}
         />

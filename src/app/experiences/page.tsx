@@ -59,9 +59,11 @@ const Experience = () => {
                 >
                   <p className="grid size-8 place-items-center overflow-hidden rounded-full bg-white">
                     <Image
-                      alt=""
+                      alt={experience.company.name}
                       className="size-6"
+                      height={50}
                       src={experience.company.logo}
+                      width={50}
                     />
                   </p>
                   <span className="group-hover:text-primary dark:group-hover:text-secondary">

@@ -25,8 +25,10 @@ const About = () => {
       <div className="mb-6 flex w-full flex-col items-center gap-3">
         <AnimatedBorderCard wrapperClassName="aspect-square min-w-[280px] max-w-[325px]">
           <Image
+            priority
             alt="Shibam Saha"
             className="object-cover"
+            height={450}
             src={ABOUT_IMG}
             width={450}
           />

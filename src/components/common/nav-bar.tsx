@@ -75,7 +75,13 @@ const HomeButton = ({ className }: { className?: string }) => {
       )}
       href="/"
     >
-      <Image alt="" className="size-full" src={LOGO} />
+      <Image
+        alt="home"
+        className="size-full"
+        height={60}
+        src={LOGO}
+        width={50}
+      />
     </Link>
   )
 }
@@ -97,9 +103,11 @@ const ToggleTheme = ({ className }: { className?: string }) => {
       onClick={toggleTheme}
     >
       <Image
-        alt=""
+        alt="mode"
         className="size-full invert"
+        height={60}
         src={theme === 'light' ? DARK_MODE : LIGHT_MODE}
+        width={50}
       />
     </button>
   )
