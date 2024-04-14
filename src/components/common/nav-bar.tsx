@@ -75,6 +75,7 @@ const HomeButton = ({ className }: { className?: string }) => {
       )}
       href="/"
     >
+      <span className="sr-only">Home</span>
       <Image
         alt="home"
         className="size-full"

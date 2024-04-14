@@ -66,7 +66,7 @@ const Card = ({
         wrapperClassName
       )}
     >
-      <motion.div
+      <motion.section
         ref={cardRef}
         className={cn(
           'relative overflow-hidden rounded-2xl border-2 bg-bg-lighter p-3 dark:bg-bg-darker',
@@ -81,7 +81,7 @@ const Card = ({
         onMouseMove={mouseMoveHandler as any}
       >
         {children}
-      </motion.div>
+      </motion.section>
       {!!title && (
         <h3
           className={cn(

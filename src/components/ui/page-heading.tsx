@@ -39,16 +39,16 @@ const PageHeading = ({
       variants={fadeIn('up', 'tween', 75, 0.1, 0.5)}
     >
       {heading && (
-        <h3 className="text-center text-2xl font-bold text-text-black dark:text-text-white sm:text-4xl">
+        <h2 className="text-center text-2xl font-bold text-text-black dark:text-text-white sm:text-4xl">
           {heading}
 
           {dot && <span className="text-primary dark:text-secondary">.</span>}
-        </h3>
+        </h2>
       )}
       {subHeading && (
-        <h4 className="mx-auto max-w-md text-center text-lg font-semibold text-primary dark:text-secondary sm:text-xl">
+        <h5 className="mx-auto max-w-md text-center text-lg font-semibold text-primary dark:text-secondary sm:text-xl">
           {subHeading}
-        </h4>
+        </h5>
       )}
     </motion.div>
   )

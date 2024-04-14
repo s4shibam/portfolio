@@ -12,7 +12,12 @@ import LayoutProvider from '@/providers/layout-provider'
 import { getProjectDetails } from '@/utils/functions'
 import GoogleAnalytics from 'components/analytics/google-analytics'
 
-const outfit = Outfit({ subsets: ['latin'] })
+const outfit = Outfit({
+  weight: ['400', '500', '600', '700'],
+  subsets: ['latin'],
+  preload: true,
+  adjustFontFallback: false
+})
 
 export async function generateMetadata(): Promise<Metadata> {
   const metadata: Metadata = {

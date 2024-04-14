@@ -21,7 +21,7 @@ const IconList = ({
   wrapperClassName
 }: TIconListProps) => {
   return (
-    <div className={cn('flex flex-col gap-1.5', wrapperClassName)}>
+    <ul className={cn('flex flex-col gap-1.5', wrapperClassName)}>
       {data?.map((point, i) => (
         <motion.li
           key={i}
@@ -40,7 +40,7 @@ const IconList = ({
           <p className="leading-6">{point}</p>
         </motion.li>
       ))}
-    </div>
+    </ul>
   )
 }
 

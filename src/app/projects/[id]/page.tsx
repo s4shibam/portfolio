@@ -51,6 +51,7 @@ const ProjectDetailsById = () => {
           className="grid place-items-center rounded-lg bg-bg-lighter transition-opacity hover:opacity-75 dark:bg-bg-dark"
           href={'/projects/' + prevProject?.id}
         >
+          <span className="sr-only">Previous: {prevProject?.name}</span>
           <i className="bx bx-chevron-left bx-lg" />
         </Link>
         <PageHeading
@@ -62,6 +63,7 @@ const ProjectDetailsById = () => {
           className="grid place-items-center rounded-lg bg-bg-lighter transition-opacity hover:opacity-75 dark:bg-bg-dark"
           href={'/projects/' + nextProject?.id}
         >
+          <span className="sr-only">Next: {nextProject?.name}</span>
           <i className="bx bx-chevron-right bx-lg" />
         </Link>
       </div>
