@@ -21,7 +21,7 @@ html {
 }
 
 body {
-  @apply hide-scroll min-h-screen w-screen bg-bg-light px-4 text-base text-text-black dark:bg-bg-darker dark:text-text-white md:text-lg;
+  @apply hide-scroll min-h-screen w-screen bg-bg-light px-4 text-base text-text-black antialiased dark:bg-bg-darker dark:text-text-white md:text-lg;
 }
 
 /* Hide Scroll bar for components having "hide-scroll" class in their class name */
