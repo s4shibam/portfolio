@@ -10,7 +10,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   let domain = headersList.get('host') as string
 
   if (domain.startsWith('localhost')) {
-    domain = APP_URL
+    domain = APP_URL?.replace('https://', '')
   }
 
   const navLinks = NAV_ITEMS.map((item) => {
