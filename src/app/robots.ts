@@ -8,14 +8,9 @@ export default function robots(): MetadataRoute.Robots {
   return {
     rules: [
       {
-        userAgent: 'Googlebot',
+        userAgent: '*',
         allow: '/',
-        disallow: ['/_next/', '/api/']
-      },
-      {
-        userAgent: 'LinkedInBot',
-        allow: '/',
-        disallow: ['/_next/', '/api/']
+        disallow: '/_next/'
       }
     ],
     sitemap: `https://${domain}/sitemap.xml`
