@@ -1,5 +1,5 @@
 <p align="center">
-    <a href="https://shibamsaha.dev">
+    <a href="https://s4shibam.com">
         <img alt="Portfolio" width="100" src="./src/app/icon.ico">
     </a>
 </p>
@@ -38,6 +38,7 @@ A computer science undergrad's portfolio website showcasing all accomplishments 
 
 - [x] Design and create a visually stunning portfolio with captivating animations
 - [x] Integrate email functionality seamlessly using Email JS for enhanced communication
+- [x] Implement link redirection service for personal links
 
 ## 🖼️ Screenshots
 
