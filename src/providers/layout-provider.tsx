@@ -14,7 +14,7 @@ const LayoutProvider = ({ children }: { children: ReactNode }) => {
   const pathname = usePathname()
 
   return (
-    <ThemeProvider attribute="class">
+    <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false}>
       <motion.main
         animate="animate"
         className="relative mx-auto size-full max-w-portfolio pt-9 md:pt-36"
