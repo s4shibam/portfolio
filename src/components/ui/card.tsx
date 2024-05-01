@@ -39,7 +39,7 @@ const Card = ({
   const cardRef = useRef<HTMLDivElement>(null)
 
   const mouseMoveHandler = (e: MouseEvent) => {
-    if (!cardRef.current) return
+    if (!cardRef.current || window.innerWidth < 768) return
 
     const { left, top } = cardRef.current.getBoundingClientRect()
     const mouseX = e.clientX - left
