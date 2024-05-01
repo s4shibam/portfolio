@@ -5,6 +5,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useTheme } from 'next-themes'
+import { useEffect, useState } from 'react'
 
 import { slideIn } from '@/animation/framer'
 import { NAV_ITEMS, TNavItem } from '@/constants/nav-items'
@@ -88,11 +89,20 @@ const HomeButton = ({ className }: { className?: string }) => {
 }
 
 const ToggleTheme = ({ className }: { className?: string }) => {
+  const [mounted, setMounted] = useState(false)
   const { theme, setTheme } = useTheme()
 
   function toggleTheme() {
     if (theme === 'dark') setTheme('light')
     else setTheme('dark')
+  }
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
+  if (!mounted) {
+    return null
   }
 
   return (
