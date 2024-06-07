@@ -24,7 +24,7 @@ const ProjectCard = ({ i, project }: { i: number; project: TProject }) => {
         </p>
         <Image
           alt={project?.title}
-          className="rounded-lg drop-shadow-md"
+          className="w-full rounded-lg drop-shadow-md"
           height={200}
           src={project?.image}
           width={350}
